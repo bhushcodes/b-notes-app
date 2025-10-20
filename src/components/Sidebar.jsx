@@ -20,13 +20,13 @@ const Sidebar = ({ categories, selectedCategory, onSelectCategory, isOpen, onTog
       >
         <div className="h-full flex flex-col p-6">
           <div className="mb-8 bg-brutal-accent-yellow p-4 border-4 border-black shadow-brutal">
-            <h2 className="text-xl font-black">📝 B-NOTES</h2>
-            <p className="text-xs font-bold mt-1 tracking-wide">Organize your thoughts</p>
+            <h2 className="text-xl font-black" style={{fontFamily: 'Space Grotesk, sans-serif'}}>📝 B-NOTES</h2>
+            <p className="text-xs font-bold mt-1 tracking-wider" style={{fontFamily: 'Inter, sans-serif'}}>Organize your thoughts</p>
           </div>
 
           {/* Categories */}
           <nav className="flex-1">
-            <h3 className="text-xs font-bold text-black mb-3 tracking-wide">CATEGORIES</h3>
+            <h3 className="text-xs font-extrabold text-black mb-3 tracking-wider" style={{fontFamily: 'Space Grotesk, sans-serif'}}>CATEGORIES</h3>
             <div className="space-y-3">
               {categories.map(category => (
                 <button

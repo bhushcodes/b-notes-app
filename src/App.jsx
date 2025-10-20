@@ -94,7 +94,7 @@ function App() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <header className="bg-white border-b-4 border-black px-4 sm:px-6 py-3 sm:py-4 shadow-brutal">
+        <header className="bg-white border-b-4 border-black px-4 sm:px-6 py-3 sm:py-4 shadow-brutal" style={{minHeight: '80px'}}>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
             <div className="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
               {/* Mobile Menu Button */}
@@ -105,7 +105,7 @@ function App() {
                 <Menu size={20} className="text-black" />
               </button>
               
-              <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-black tracking-tight">📝 B-NOTES</h1>
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-black tracking-tight" style={{fontFamily: 'Space Grotesk, sans-serif'}}>📝 B-NOTES</h1>
               
               <button
                 onClick={createNote}
@@ -136,7 +136,7 @@ function App() {
           {/* Notes List */}
           <div className={`${selectedNote && !isEditing ? 'hidden md:flex' : 'flex'} md:w-80 lg:w-96 w-full bg-brutal-blue border-r-0 md:border-r-4 border-black overflow-y-auto flex-shrink-0`}>
             <div className="p-4">
-              <h2 className="text-sm font-bold text-black mb-4 tracking-wide">
+              <h2 className="text-sm font-extrabold text-black mb-4 tracking-wide uppercase" style={{fontFamily: 'Space Grotesk, sans-serif'}}>
                 {filteredNotes.length} {filteredNotes.length === 1 ? 'Note' : 'Notes'}
               </h2>
               

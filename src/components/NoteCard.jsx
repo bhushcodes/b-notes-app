@@ -53,12 +53,12 @@ const NoteCard = ({ note, isSelected, onClick, onDelete }) => {
       </div>
 
       {/* Note Title */}
-      <h3 className="font-bold text-black mb-2 line-clamp-2">
+      <h3 className="font-bold text-black mb-2 line-clamp-2 text-base" style={{fontFamily: 'Space Grotesk, sans-serif'}}>
         {note.title || 'Untitled Note'}
       </h3>
 
       {/* Note Content Preview */}
-      <p className="text-sm text-gray-700 mb-3 line-clamp-2">
+      <p className="text-sm text-gray-800 mb-3 line-clamp-2 leading-relaxed">
         {note.content || 'No content yet...'}
       </p>
 
@@ -81,7 +81,7 @@ const NoteCard = ({ note, isSelected, onClick, onDelete }) => {
       )}
 
       {/* Timestamp */}
-      <div className="flex items-center text-xs text-gray-600 font-medium">
+      <div className="flex items-center text-xs text-gray-700 font-semibold">
         <Clock size={12} className="mr-1" />
         {formatDate(note.updatedAt)}
       </div>

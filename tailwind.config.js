@@ -21,14 +21,14 @@ export default {
           900: '#451a03',
         },
         brutal: {
-          yellow: '#FFF9C4',      // Soft yellow
-          pink: '#FFE0F0',        // Light pink
-          blue: '#E0F7FF',        // Light blue
-          green: '#E0FFF4',       // Light mint
-          purple: '#F3E5FF',      // Light lavender
-          orange: '#FFE8CC',      // Light peach
-          red: '#FFE5E5',         // Light red
-          cream: '#FFFBF0',       // Cream
+          yellow: '#FFF4B3',      // Soft yellow - slightly darker
+          pink: '#FFD4E8',        // Light pink - more visible
+          blue: '#C8EEFF',        // Light blue - better contrast
+          green: '#C8FFE8',       // Light mint - more visible
+          purple: '#E5D4FF',      // Light lavender - darker
+          orange: '#FFD9B3',      // Light peach - more visible
+          red: '#FFD4D4',         // Light red - better contrast
+          cream: '#FFF9F0',       // Cream - warmer
           accent: {
             yellow: '#FFD54F',    // Accent yellow
             pink: '#FF80AB',      // Accent pink

@@ -51,7 +51,7 @@ const NoteEditor = ({ note, isEditing, onUpdate, onEdit, onCancel }) => {
     <div className="h-full flex flex-col p-4 sm:p-6 md:p-8 max-w-4xl mx-auto bg-brutal-cream">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 sm:mb-6 bg-brutal-yellow border-4 border-black p-3 sm:p-4 shadow-brutal">
-        <div className="text-xs sm:text-sm text-black font-semibold">
+        <div className="text-xs sm:text-sm text-black font-bold" style={{fontFamily: 'Inter, sans-serif'}}>
           <p className="truncate">Created: {formatDate(note.createdAt)}</p>
           <p className="truncate">Updated: {formatDate(note.updatedAt)}</p>
         </div>
@@ -80,7 +80,7 @@ const NoteEditor = ({ note, isEditing, onUpdate, onEdit, onCancel }) => {
       {/* Category Selector */}
       {isEditing && (
         <div className="mb-4 sm:mb-6 bg-white border-4 border-black p-4 sm:p-6 shadow-brutal">
-          <label className="block text-sm font-bold text-black mb-3 sm:mb-4 tracking-wide">Category</label>
+          <label className="block text-sm font-extrabold text-black mb-3 sm:mb-4 tracking-wide uppercase" style={{fontFamily: 'Space Grotesk, sans-serif'}}>Category</label>
           <div className="flex flex-wrap gap-2 sm:gap-3">
             {['personal', 'work', 'ideas'].map(cat => (
               <button
@@ -106,10 +106,11 @@ const NoteEditor = ({ note, isEditing, onUpdate, onEdit, onCancel }) => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Note title..."
-          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 border-4 border-black p-3 sm:p-4 focus:outline-none bg-white shadow-brutal placeholder:text-gray-400"
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 border-4 border-black p-3 sm:p-4 focus:outline-none bg-white shadow-brutal placeholder:text-gray-500"
+          style={{fontFamily: 'Space Grotesk, sans-serif'}}
         />
       ) : (
-        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-black bg-white border-4 border-black p-3 sm:p-4 shadow-brutal break-words">{title}</h1>
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-black bg-white border-4 border-black p-3 sm:p-4 shadow-brutal break-words" style={{fontFamily: 'Space Grotesk, sans-serif'}}>{title}</h1>
       )}
 
       {/* Tags */}
@@ -162,11 +163,12 @@ const NoteEditor = ({ note, isEditing, onUpdate, onEdit, onCancel }) => {
             value={content}
             onChange={(e) => setContent(e.target.value)}
             placeholder="Start writing your note..."
-            className="w-full h-full min-h-64 sm:min-h-96 p-4 sm:p-6 border-4 border-black focus:outline-none focus:shadow-brutal-lg resize-none text-base sm:text-lg bg-white placeholder:text-gray-400"
+            className="w-full h-full min-h-64 sm:min-h-96 p-4 sm:p-6 border-4 border-black focus:outline-none focus:shadow-brutal-lg resize-none text-base sm:text-lg bg-white placeholder:text-gray-500 leading-relaxed"
+            style={{fontFamily: 'Inter, sans-serif'}}
           />
         ) : (
           <div className="prose max-w-none p-6">
-            <p className="text-lg text-gray-800 whitespace-pre-wrap">
+            <p className="text-lg text-gray-900 whitespace-pre-wrap leading-relaxed" style={{fontFamily: 'Inter, sans-serif'}}>
               {content || 'No content yet. Click Edit to add content.'}
             </p>
           </div>
