@@ -12,22 +12,22 @@
 @layer components {
   /* Neo-brutalism Buttons */
   .btn-primary {
-    @apply bg-brutal-accent-yellow text-black font-bold px-6 py-3 border-4 border-black 
+    @apply bg-brutal-accent-yellow text-black font-bold px-4 sm:px-6 py-2 sm:py-3 border-3 sm:border-4 border-black 
            shadow-brutal hover:shadow-brutal-hover transition-all duration-150 
-           hover:translate-x-[2px] hover:translate-y-[2px] uppercase tracking-wide;
+           hover:translate-x-[2px] hover:translate-y-[2px] uppercase tracking-wide text-sm sm:text-base;
   }
   
   .btn-secondary {
-    @apply bg-white text-black font-bold px-6 py-3 border-4 border-black 
+    @apply bg-white text-black font-bold px-4 sm:px-6 py-2 sm:py-3 border-3 sm:border-4 border-black 
            shadow-brutal hover:shadow-brutal-hover transition-all duration-150 
-           hover:translate-x-[2px] hover:translate-y-[2px] uppercase tracking-wide;
+           hover:translate-x-[2px] hover:translate-y-[2px] uppercase tracking-wide text-sm sm:text-base;
   }
   
   /* Neo-brutalism Input */
   .input-field {
-    @apply w-full px-4 py-3 border-4 border-black bg-white font-semibold
+    @apply w-full px-3 sm:px-4 py-2 sm:py-3 border-3 sm:border-4 border-black bg-white font-semibold
            shadow-brutal focus:outline-none focus:shadow-brutal-lg 
-           focus:translate-x-[2px] focus:translate-y-[2px] transition-all duration-150;
+           focus:translate-x-[2px] focus:translate-y-[2px] transition-all duration-150 text-sm sm:text-base;
   }
   
   /* Neo-brutalism Card */

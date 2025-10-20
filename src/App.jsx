@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PlusCircle, Search, Tag, Clock, Trash2, Edit3, X, Check } from 'lucide-react';
+import { PlusCircle, Search, Tag, Clock, Trash2, Edit3, X, Check, Menu } from 'lucide-react';
 import NoteCard from './components/NoteCard';
 import NoteEditor from './components/NoteEditor';
 import Sidebar from './components/Sidebar';
@@ -94,37 +94,47 @@ function App() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Header */}
-        <header className="bg-white border-b-4 border-black px-6 py-4 shadow-brutal">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <h1 className="text-3xl font-black text-black tracking-tight">📝 B-NOTES</h1>
+        <header className="bg-white border-b-4 border-black px-4 sm:px-6 py-3 sm:py-4 shadow-brutal">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div className="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                className="lg:hidden p-2 bg-brutal-accent-yellow border-3 border-black shadow-brutal"
+              >
+                <Menu size={20} className="text-black" />
+              </button>
+              
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-black tracking-tight">📝 B-NOTES</h1>
+              
               <button
                 onClick={createNote}
-                className="btn-primary flex items-center space-x-2"
+                className="btn-primary flex items-center gap-2 text-sm sm:text-base px-3 sm:px-6 py-2 sm:py-3"
               >
-                <PlusCircle size={20} />
-                <span>New Note</span>
+                <PlusCircle size={18} className="sm:w-5 sm:h-5" />
+                <span className="hidden sm:inline">New Note</span>
+                <span className="sm:hidden">New</span>
               </button>
             </div>
             
             {/* Search Bar */}
-            <div className="relative w-96">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black" size={20} />
+            <div className="relative w-full sm:w-64 md:w-80 lg:w-96">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-black" size={18} />
               <input
                 type="text"
                 placeholder="Search notes..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="input-field pl-10 placeholder:text-gray-500"
+                className="input-field pl-10 text-sm sm:text-base placeholder:text-gray-500"
               />
             </div>
           </div>
         </header>
 
         {/* Content Area */}
-        <div className="flex-1 flex overflow-hidden">
+        <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
           {/* Notes List */}
-          <div className="w-96 bg-brutal-blue border-r-4 border-black overflow-y-auto">
+          <div className={`${selectedNote && !isEditing ? 'hidden md:flex' : 'flex'} md:w-80 lg:w-96 w-full bg-brutal-blue border-r-0 md:border-r-4 border-black overflow-y-auto flex-shrink-0`}>
             <div className="p-4">
               <h2 className="text-sm font-bold text-black mb-4 tracking-wide">
                 {filteredNotes.length} {filteredNotes.length === 1 ? 'Note' : 'Notes'}
@@ -154,7 +164,7 @@ function App() {
           </div>
 
           {/* Note Editor/Viewer */}
-          <div className="flex-1 overflow-y-auto">
+          <div className={`${selectedNote ? 'flex' : 'hidden md:flex'} flex-1 overflow-y-auto`}>
             {selectedNote ? (
               <NoteEditor
                 note={selectedNote}

@@ -48,15 +48,15 @@ const NoteEditor = ({ note, isEditing, onUpdate, onEdit, onCancel }) => {
   };
 
   return (
-    <div className="h-full flex flex-col p-8 max-w-4xl mx-auto bg-brutal-cream">
+    <div className="h-full flex flex-col p-4 sm:p-6 md:p-8 max-w-4xl mx-auto bg-brutal-cream">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6 bg-brutal-yellow border-4 border-black p-4 shadow-brutal">
-        <div className="text-sm text-black font-semibold">
-          <p>Created: {formatDate(note.createdAt)}</p>
-          <p>Last updated: {formatDate(note.updatedAt)}</p>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 sm:mb-6 bg-brutal-yellow border-4 border-black p-3 sm:p-4 shadow-brutal">
+        <div className="text-xs sm:text-sm text-black font-semibold">
+          <p className="truncate">Created: {formatDate(note.createdAt)}</p>
+          <p className="truncate">Updated: {formatDate(note.updatedAt)}</p>
         </div>
         
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-2">
           {isEditing ? (
             <>
               <button onClick={onCancel} className="btn-secondary flex items-center space-x-2">
@@ -79,14 +79,14 @@ const NoteEditor = ({ note, isEditing, onUpdate, onEdit, onCancel }) => {
 
       {/* Category Selector */}
       {isEditing && (
-        <div className="mb-6 bg-white border-4 border-black p-6 shadow-brutal">
-          <label className="block text-sm font-bold text-black mb-4 tracking-wide">Category</label>
-          <div className="flex space-x-3">
+        <div className="mb-4 sm:mb-6 bg-white border-4 border-black p-4 sm:p-6 shadow-brutal">
+          <label className="block text-sm font-bold text-black mb-3 sm:mb-4 tracking-wide">Category</label>
+          <div className="flex flex-wrap gap-2 sm:gap-3">
             {['personal', 'work', 'ideas'].map(cat => (
               <button
                 key={cat}
                 onClick={() => setCategory(cat)}
-                className={`px-6 py-3 border-4 border-black capitalize transition-all duration-150 font-bold ${
+                className={`px-4 py-2 sm:px-6 sm:py-3 border-3 sm:border-4 border-black capitalize transition-all duration-150 font-bold text-sm sm:text-base ${
                   category === cat
                     ? 'bg-brutal-accent-yellow text-black shadow-brutal-lg translate-x-[2px] translate-y-[2px]'
                     : 'bg-white text-black shadow-brutal hover:shadow-brutal-lg hover:translate-x-[2px] hover:translate-y-[2px]'
@@ -106,19 +106,19 @@ const NoteEditor = ({ note, isEditing, onUpdate, onEdit, onCancel }) => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Note title..."
-          className="text-4xl font-bold mb-6 border-4 border-black p-4 focus:outline-none bg-white shadow-brutal placeholder:text-gray-400"
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 border-4 border-black p-3 sm:p-4 focus:outline-none bg-white shadow-brutal placeholder:text-gray-400"
         />
       ) : (
-        <h1 className="text-4xl font-bold mb-6 text-black bg-white border-4 border-black p-4 shadow-brutal">{title}</h1>
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-black bg-white border-4 border-black p-3 sm:p-4 shadow-brutal break-words">{title}</h1>
       )}
 
       {/* Tags */}
-      <div className="mb-6 bg-white border-4 border-black p-6 shadow-brutal">
+      <div className="mb-4 sm:mb-6 bg-white border-4 border-black p-4 sm:p-6 shadow-brutal">
         <div className="flex flex-wrap gap-2 mb-3">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="inline-flex items-center px-3 py-2 text-sm font-bold bg-brutal-accent-pink text-black border-2 border-black"
+              className="inline-flex items-center px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm font-bold bg-brutal-accent-pink text-black border-2 border-black"
             >
               <Tag size={14} className="mr-1" />
               {tag}
@@ -135,7 +135,7 @@ const NoteEditor = ({ note, isEditing, onUpdate, onEdit, onCancel }) => {
         </div>
         
         {isEditing && (
-          <div className="flex items-center space-x-2">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
             <input
               type="text"
               value={newTag}
@@ -162,7 +162,7 @@ const NoteEditor = ({ note, isEditing, onUpdate, onEdit, onCancel }) => {
             value={content}
             onChange={(e) => setContent(e.target.value)}
             placeholder="Start writing your note..."
-            className="w-full h-full min-h-96 p-6 border-4 border-black focus:outline-none focus:shadow-brutal-lg resize-none text-lg bg-white placeholder:text-gray-400"
+            className="w-full h-full min-h-64 sm:min-h-96 p-4 sm:p-6 border-4 border-black focus:outline-none focus:shadow-brutal-lg resize-none text-base sm:text-lg bg-white placeholder:text-gray-400"
           />
         ) : (
           <div className="prose max-w-none p-6">
