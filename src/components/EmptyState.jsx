@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, PlusCircle } from 'lucide-react';
+import { FileText, PlusCircle, Edit3, Tag, Search } from 'lucide-react';
 
 const EmptyState = ({ onCreateNote }) => {
   return (
@@ -27,19 +27,25 @@ const EmptyState = ({ onCreateNote }) => {
         
         <div className="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-2xl mx-auto text-left px-4">
           <div className="bg-brutal-pink border-4 border-black p-4 sm:p-6 shadow-brutal hover:shadow-brutal-lg transition-all duration-150 hover:translate-x-[1px] hover:translate-y-[1px]">
-            <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">📝</div>
+            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-brutal-accent-pink border-3 border-black shadow-brutal mb-3">
+              <Edit3 size={28} className="text-black" strokeWidth={2.5} />
+            </div>
             <h3 className="font-bold text-black mb-1 sm:mb-2 text-sm sm:text-base" style={{fontFamily: 'Space Grotesk, sans-serif'}}>Rich Notes</h3>
             <p className="text-xs sm:text-sm text-gray-800 leading-relaxed">Create detailed notes with titles, content, and tags</p>
           </div>
           
           <div className="bg-brutal-blue border-4 border-black p-4 sm:p-6 shadow-brutal hover:shadow-brutal-lg transition-all duration-150 hover:translate-x-[1px] hover:translate-y-[1px]">
-            <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">🏷️</div>
+            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-brutal-accent-blue border-3 border-black shadow-brutal mb-3">
+              <Tag size={28} className="text-black" strokeWidth={2.5} />
+            </div>
             <h3 className="font-bold text-black mb-1 sm:mb-2 text-sm sm:text-base" style={{fontFamily: 'Space Grotesk, sans-serif'}}>Organize</h3>
             <p className="text-xs sm:text-sm text-gray-800 leading-relaxed">Categorize notes and add custom tags</p>
           </div>
           
           <div className="bg-brutal-orange border-4 border-black p-4 sm:p-6 shadow-brutal hover:shadow-brutal-lg transition-all duration-150 hover:translate-x-[1px] hover:translate-y-[1px]">
-            <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">🔍</div>
+            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-brutal-accent-orange border-3 border-black shadow-brutal mb-3">
+              <Search size={28} className="text-black" strokeWidth={2.5} />
+            </div>
             <h3 className="font-bold text-black mb-1 sm:mb-2 text-sm sm:text-base" style={{fontFamily: 'Space Grotesk, sans-serif'}}>Search</h3>
             <p className="text-xs sm:text-sm text-gray-800 leading-relaxed">Quickly find any note with powerful search</p>
           </div>

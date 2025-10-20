@@ -105,7 +105,7 @@ function App() {
                 <Menu size={20} className="text-black" />
               </button>
               
-              <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-black tracking-tight" style={{fontFamily: 'Space Grotesk, sans-serif'}}>📝 B-NOTES</h1>
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-black tracking-tight" style={{fontFamily: 'Space Grotesk, sans-serif'}}>B-NOTES</h1>
               
               <button
                 onClick={createNote}

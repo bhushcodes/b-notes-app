@@ -20,8 +20,8 @@ const Sidebar = ({ categories, selectedCategory, onSelectCategory, isOpen, onTog
       >
         <div className="h-full flex flex-col p-6">
           <div className="mb-8 bg-brutal-accent-yellow p-4 border-4 border-black shadow-brutal">
-            <h2 className="text-xl font-black" style={{fontFamily: 'Space Grotesk, sans-serif'}}>📝 B-NOTES</h2>
-            <p className="text-xs font-bold mt-1 tracking-wider" style={{fontFamily: 'Inter, sans-serif'}}>Organize your thoughts</p>
+            <h2 className="text-xl font-black" style={{fontFamily: 'Space Grotesk, sans-serif'}}>B-NOTES</h2>
+            <p className="text-xs font-bold mt-1 tracking-wider uppercase" style={{fontFamily: 'Inter, sans-serif'}}>Note Taking App</p>
           </div>
 
           {/* Categories */}
