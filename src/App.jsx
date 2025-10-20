@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { PlusCircle, Search, Tag, Clock, Trash2, Edit3, X, Check, Menu } from 'lucide-react';
+import netlifyIdentity from 'netlify-identity-widget';
 import NoteCard from './components/NoteCard';
 import NoteEditor from './components/NoteEditor';
 import Sidebar from './components/Sidebar';
 import EmptyState from './components/EmptyState';
+import AuthButton from './components/AuthButton';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -13,9 +15,15 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
+  // Get storage key based on user
+  const getStorageKey = () => {
+    const user = netlifyIdentity.currentUser();
+    return user ? `bNotes_${user.id}` : 'bNotes_guest';
+  };
+
   // Load notes from localStorage on mount
   useEffect(() => {
-    const savedNotes = localStorage.getItem('bNotes');
+    const savedNotes = localStorage.getItem(getStorageKey());
     if (savedNotes) {
       setNotes(JSON.parse(savedNotes));
     }
@@ -23,7 +31,7 @@ function App() {
 
   // Save notes to localStorage whenever they change
   useEffect(() => {
-    localStorage.setItem('bNotes', JSON.stringify(notes));
+    localStorage.setItem(getStorageKey(), JSON.stringify(notes));
   }, [notes]);
 
   // Create a new note
@@ -96,7 +104,7 @@ function App() {
         {/* Header */}
         <header className="bg-white border-b-4 border-black px-4 sm:px-6 py-3 sm:py-4 shadow-brutal" style={{minHeight: '80px'}}>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <div className="flex items-center justify-between sm:justify-start gap-2 sm:gap-4">
+            <div className="flex items-center justify-between w-full sm:w-auto gap-2 sm:gap-4">
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -107,14 +115,17 @@ function App() {
               
               <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-black tracking-tight" style={{fontFamily: 'Space Grotesk, sans-serif'}}>B-NOTES</h1>
               
-              <button
-                onClick={createNote}
-                className="btn-primary flex items-center gap-2 text-sm sm:text-base px-3 sm:px-6 py-2 sm:py-3"
-              >
-                <PlusCircle size={18} className="sm:w-5 sm:h-5" />
-                <span className="hidden sm:inline">New Note</span>
-                <span className="sm:hidden">New</span>
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={createNote}
+                  className="btn-primary flex items-center gap-2 text-sm sm:text-base px-3 sm:px-6 py-2 sm:py-3"
+                >
+                  <PlusCircle size={18} className="sm:w-5 sm:h-5" />
+                  <span className="hidden sm:inline">New Note</span>
+                  <span className="sm:hidden">New</span>
+                </button>
+                <AuthButton />
+              </div>
             </div>
             
             {/* Search Bar */}
