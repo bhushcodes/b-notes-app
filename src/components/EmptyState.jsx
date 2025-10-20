@@ -25,29 +25,29 @@ const EmptyState = ({ onCreateNote }) => {
           <span>Create Your First Note</span>
         </button>
         
-        <div className="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-2xl mx-auto text-left px-4">
-          <div className="bg-brutal-pink border-4 border-black p-4 sm:p-6 shadow-brutal hover:shadow-brutal-lg transition-all duration-150 hover:translate-x-[1px] hover:translate-y-[1px]">
-            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-brutal-accent-pink border-3 border-black shadow-brutal mb-3">
-              <Edit3 size={28} className="text-black" strokeWidth={2.5} />
+        <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto text-left px-4">
+          <div className="bg-brutal-pink border-4 border-black p-3 sm:p-4 shadow-brutal hover:shadow-brutal-lg transition-all duration-150 hover:translate-x-[1px] hover:translate-y-[1px]">
+            <div className="inline-flex items-center justify-center w-10 h-10 bg-brutal-accent-pink border-2 border-black shadow-brutal mb-2">
+              <Edit3 size={20} className="text-black" strokeWidth={2.5} />
             </div>
-            <h3 className="font-bold text-black mb-1 sm:mb-2 text-sm sm:text-base" style={{fontFamily: 'Space Grotesk, sans-serif'}}>Rich Notes</h3>
-            <p className="text-xs sm:text-sm text-gray-800 leading-relaxed">Create detailed notes with titles, content, and tags</p>
+            <h3 className="font-extrabold text-black mb-1 text-xs uppercase tracking-wide" style={{fontFamily: 'Space Grotesk, sans-serif'}}>Rich Notes</h3>
+            <p className="text-xs text-black leading-snug font-medium">Create detailed notes with titles, content, and tags</p>
           </div>
           
-          <div className="bg-brutal-blue border-4 border-black p-4 sm:p-6 shadow-brutal hover:shadow-brutal-lg transition-all duration-150 hover:translate-x-[1px] hover:translate-y-[1px]">
-            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-brutal-accent-blue border-3 border-black shadow-brutal mb-3">
-              <Tag size={28} className="text-black" strokeWidth={2.5} />
+          <div className="bg-brutal-blue border-4 border-black p-3 sm:p-4 shadow-brutal hover:shadow-brutal-lg transition-all duration-150 hover:translate-x-[1px] hover:translate-y-[1px]">
+            <div className="inline-flex items-center justify-center w-10 h-10 bg-brutal-accent-blue border-2 border-black shadow-brutal mb-2">
+              <Tag size={20} className="text-black" strokeWidth={2.5} />
             </div>
-            <h3 className="font-bold text-black mb-1 sm:mb-2 text-sm sm:text-base" style={{fontFamily: 'Space Grotesk, sans-serif'}}>Organize</h3>
-            <p className="text-xs sm:text-sm text-gray-800 leading-relaxed">Categorize notes and add custom tags</p>
+            <h3 className="font-extrabold text-black mb-1 text-xs uppercase tracking-wide" style={{fontFamily: 'Space Grotesk, sans-serif'}}>Organize</h3>
+            <p className="text-xs text-black leading-snug font-medium">Categorize notes and add custom tags</p>
           </div>
           
-          <div className="bg-brutal-orange border-4 border-black p-4 sm:p-6 shadow-brutal hover:shadow-brutal-lg transition-all duration-150 hover:translate-x-[1px] hover:translate-y-[1px]">
-            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-brutal-accent-orange border-3 border-black shadow-brutal mb-3">
-              <Search size={28} className="text-black" strokeWidth={2.5} />
+          <div className="bg-brutal-orange border-4 border-black p-3 sm:p-4 shadow-brutal hover:shadow-brutal-lg transition-all duration-150 hover:translate-x-[1px] hover:translate-y-[1px]">
+            <div className="inline-flex items-center justify-center w-10 h-10 bg-brutal-accent-orange border-2 border-black shadow-brutal mb-2">
+              <Search size={20} className="text-black" strokeWidth={2.5} />
             </div>
-            <h3 className="font-bold text-black mb-1 sm:mb-2 text-sm sm:text-base" style={{fontFamily: 'Space Grotesk, sans-serif'}}>Search</h3>
-            <p className="text-xs sm:text-sm text-gray-800 leading-relaxed">Quickly find any note with powerful search</p>
+            <h3 className="font-extrabold text-black mb-1 text-xs uppercase tracking-wide" style={{fontFamily: 'Space Grotesk, sans-serif'}}>Search</h3>
+            <p className="text-xs text-black leading-snug font-medium">Quickly find any note with powerful search</p>
           </div>
         </div>
       </div>
