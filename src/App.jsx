@@ -141,8 +141,16 @@ function App() {
               </h2>
               
               {filteredNotes.length === 0 ? (
-                <div className="text-center py-12 bg-white border-4 border-black shadow-brutal">
-                  <p className="text-black font-bold uppercase">No notes found</p>
+                <div className="text-center py-8 bg-white border-4 border-black shadow-brutal p-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-brutal-yellow border-3 border-black shadow-brutal mb-4">
+                    <Search size={32} className="text-black" strokeWidth={2.5} />
+                  </div>
+                  <h3 className="text-sm font-extrabold text-black mb-2 uppercase tracking-wide" style={{fontFamily: 'Space Grotesk, sans-serif'}}>
+                    No Notes Found
+                  </h3>
+                  <p className="text-xs text-black font-medium leading-relaxed">
+                    {searchQuery ? 'Try a different search term' : 'Create your first note to get started'}
+                  </p>
                 </div>
               ) : (
                 <div className="space-y-3">
